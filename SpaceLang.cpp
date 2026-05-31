@@ -32,7 +32,52 @@ int main() {
             for (int i = 0; i < repeatCount; i++) {
                 cout << a + b << "\n";
             }
+            repeatCount = 1;
+        }
 
+        else if (c.find("minus(") == 0) {
+            int a, b;
+            sscanf(c.c_str(), "minus(%d-%d)", &a, &b);
+
+            for (int i = 0; i < repeatCount; i++) {
+                cout << a - b << "\n";
+            }
+
+            repeatCount = 1;
+        }
+
+        else if (c.find("times(") == 0) {
+            int a, b;
+            sscanf(c.c_str(), "times(%d*%d)", &a, &b);
+
+            for (int i = 0; i < repeatCount; i++) {
+                cout << a * b << "\n";
+            }
+
+            repeatCount = 1;
+        }
+
+        else if (c.find("divide(") == 0) {
+            int a, b;
+            sscanf(c.c_str(), "divide(%d/%d)", &a, &b);
+
+            for (int i = 0; i < repeatCount; i++) {
+                cout << a / b << "\n";
+            }
+
+            repeatCount = 1;
+        }
+
+        else if (c.find("set(") == 0) {
+            string inside = c.substr(4, c.size() - 5);
+            int equals = inside.find('=');
+
+            string name = inside.substr(0, equals);
+            string value = inside.substr(equals + 1);
+
+            vars[name] = value;
+
+            cout << "Set!\n";
             repeatCount = 1;
         }
 
@@ -47,7 +92,7 @@ int main() {
         }
 
         else {
-            cout << "Code not found\n";
+            cout << "Error: Code not found.\n";
             repeatCount = 1;
         }
     }
