@@ -17,4 +17,8 @@ set(): sets any variable. Example: set(name=john) or set(x=123)
 
 get(): writes the variable. Example: get(name)
 
+repeat(): repeats anything under it. Example: 
+repeat(5)
+write(hello)
+
 More codes will be added soon!
