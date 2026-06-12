@@ -78,7 +78,7 @@ int main() {
 
                     string name = inside.substr(0, equals);
                     string value = inside.substr(equals + 1);
-
+                    cout << "Set!";
                     vars[name] = value;
                 } else if (line.find("get(") == 0) {
                     string name = line.substr(4, line.size() - 5);
