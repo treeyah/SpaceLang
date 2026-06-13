@@ -35,7 +35,7 @@ int main() {
                     sscanf(line.c_str(), "repeat(%d)", &repeatCount);
                 } else if (line.find("write(") == 0) {
                     for (int i = 0; i < repeatCount; i++) {
-                        cout << line.substr(6, line.size() - 7) << "\n";
+                        cout << line.substr(6, line.size() - 7);
                     }
                     repeatCount = 1;
                 } else if (line.find("add(") == 0) {
@@ -43,7 +43,7 @@ int main() {
                     sscanf(line.c_str(), "add(%d+%d)", &a, &b);
 
                     for (int i = 0; i < repeatCount; i++) {
-                        cout << a + b << "\n";
+                        cout << a + b;
                     }
                     repeatCount = 1;
                 } else if (line.find("minus(") == 0) {
@@ -51,7 +51,7 @@ int main() {
                     sscanf(line.c_str(), "minus(%d-%d)", &a, &b);
 
                     for (int i = 0; i < repeatCount; i++) {
-                        cout << a - b << "\n";
+                        cout << a - b;
                     }
                     repeatCount = 1;
                 } else if (line.find("times(") == 0) {
@@ -59,7 +59,7 @@ int main() {
                     sscanf(line.c_str(), "times(%d*%d)", &a, &b);
 
                     for (int i = 0; i < repeatCount; i++) {
-                        cout << a * b << "\n";
+                        cout << a * b;
                     }
                     repeatCount = 1;
                 } else if (line.find("divide(") == 0) {
@@ -70,7 +70,7 @@ int main() {
                         cout << "Error: Cannot divide by zero.\n";
                     } else {
                         for (int i = 0; i < repeatCount; i++) {
-                            cout << a / b << "\n";
+                            cout << a / b;
                         }
                     }
                     repeatCount = 1;
@@ -85,7 +85,7 @@ int main() {
                     string name = line.substr(4, line.size() - 5);
 
                     for (int i = 0; i < repeatCount; i++) {
-                        cout << vars[name] << "\n";
+                        cout << vars[name];
                     }
                     repeatCount = 1;
                 } else if (line.find("random(") == 0) {
@@ -95,9 +95,14 @@ int main() {
                     int result = rand() % (max - min + 1) + min;
                 
                     for (int i = 0; i < repeatCount; i++) {
-                        cout << result << "\n";
+                        cout << result;
                     }
-                
+
+                    repeatCount = 1;
+                } else if (line.find("newline(") == 0) {
+                    for (int i = 0; i < repeatCount; i++) {
+                        cout << "\n";
+                    }
                     repeatCount = 1;
                 }
             }

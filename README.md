@@ -60,6 +60,10 @@ Then open http://localhost:8000. See [`web/README.md`](web/README.md) for detail
 
 
 write(text)
+newline()
+
+
+Output stays on the same line; use `newline()` to move to the next line.
 
 
 ### Math
@@ -97,9 +101,12 @@ repeat(n)
 ## Example
 
 write(Hello)
+newline()
 set(user=Ben)
 get(user)
+newline()
 add(10+5)
+newline()
 repeat(2)
 write(Hi)
 run()
@@ -111,8 +118,7 @@ run()
 Hello
 Ben
 15
-Hi
-Hi
+HiHi
 
 
 ---

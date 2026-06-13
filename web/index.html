@@ -38,6 +38,11 @@
         <code class="ref-example">write(Hello)  &rarr;  Hello</code>
       </div>
       <div class="ref-card">
+        <code class="ref-syntax">newline()</code>
+        <p class="ref-desc">Move the output to the next line. Output stays on one line until you call this.</p>
+        <code class="ref-example">write(Hello)<br>newline()<br>write(World)  &rarr;  Hello<br>&nbsp;&nbsp;&nbsp;&nbsp;World</code>
+      </div>
+      <div class="ref-card">
         <code class="ref-syntax">add(a+b)</code>
         <p class="ref-desc">Print the sum of two whole numbers.</p>
         <code class="ref-example">add(10+5)  &rarr;  15</code>
@@ -81,6 +86,7 @@
 
     <p class="ref-note">
       Rules: no spaces inside the brackets, and math uses whole numbers only.
+      Output is printed on the same line &mdash; use <code>newline()</code> to start a new line.
       You don't need to type <code>run()</code> &mdash; the Run button does that for you.
     </p>
   </section>
