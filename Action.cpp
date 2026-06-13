@@ -13,6 +13,8 @@ int main() {
     vector<string> program;
     map<string, string> vars;
 
+    srand(time(0));
+
     while (true) {
         getline(cin, c);
 
