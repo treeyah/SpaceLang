@@ -3,6 +3,8 @@
 #include <vector>
 #include <map>
 #include <cstdio>
+#include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
@@ -83,6 +85,17 @@ int main() {
                     for (int i = 0; i < repeatCount; i++) {
                         cout << vars[name] << "\n";
                     }
+                    repeatCount = 1;
+                } else if (line.find("random(") == 0) {
+                    int min, max;
+                    sscanf(line.c_str(), "random(%d,%d)", &min, &max);
+                
+                    int result = rand() % (max - min + 1) + min;
+                
+                    for (int i = 0; i < repeatCount; i++) {
+                        cout << result << "\n";
+                    }
+                
                     repeatCount = 1;
                 }
             }
